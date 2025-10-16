@@ -5,7 +5,7 @@ pipeline {
         stage('Clone Repo and List Files') {
             steps {
                 git branch: 'main', url: 'https://github.com/Kunal061/apache.git'
-                sh 'ls -l'
+                sh 'pwd'
             }
         }
 
