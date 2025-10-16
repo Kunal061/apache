@@ -1,21 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Sample Static Page</title>
-    <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Random Website</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
     <header>
-        <h1>Welcome to My Website</h1>
+        <h1>Welcome to My Awesome Page 🚀</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
     </header>
+
     <main>
-        <p>This is a simple static webpage example.</p>
-        <button>Click Me</button>
+        <section id="about">
+            <h2>About Us</h2>
+            <img src="https://via.placeholder.com/600x300" alt="A placeholder image representing our company">
+            <p>
+                Welcome to this randomly generated webpage! We are a fictional company dedicated to creating amazing things for a digital world. Our mission is to combine creativity with technology to build unique and compelling experiences. We believe in clean design and powerful functionality.
+            </p>
+        </section>
+        
+        <hr>
+
+        <section id="services">
+            <h2>Our Services</h2>
+            <div class="service-cards">
+                <div class="card">
+                    <h3>Web Design</h3>
+                    <p>Creating beautiful and modern web designs that are user-friendly and responsive.</p>
+                </div>
+                <div class="card">
+                    <h3>Development</h3>
+                    <p>Building robust and scalable web applications from the ground up using the latest tech.</p>
+                </div>
+                <div class="card">
+                    <h3>SEO Optimization</h3>
+                    <p>Helping your website rank higher on search engines to attract more visitors.</p>
+                </div>
+            </div>
+        </section>
+        
+        <hr>
+
+        <section id="contact">
+            <h2>Get in Touch</h2>
+            <p>Have a question or want to work with us? Send us a message!</p>
+            <form>
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Your Message" rows="5" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
     </main>
+
     <footer>
-        <p>© 2025 My Website</p>
+        <p>&copy; 2025 My Random Website. All Rights Reserved.</p>
     </footer>
+
 </body>
 </html>
