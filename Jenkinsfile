@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+    agent {label "new"}
 
     stages {
         stage('Clone Repo and List Files') {
