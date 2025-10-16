@@ -4,7 +4,6 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                // Checkout files from your GitHub repository
                 git url: 'https://github.com/Kunal061/apache.git', branch: 'main'
             }
         }
@@ -13,7 +12,7 @@ pipeline {
             steps {
                 script {
                     sh '''
-                    APACHE_WEB_ROOT="/var/www/html"
+                    APACHE_WEB_ROOT="/var/www"  # Adjusted path
                     WORKSPACE_DIR="/var/jenkins_home/workspace/pipe_2_apache"
 
                     if [ ! -d "$APACHE_WEB_ROOT" ]; then
