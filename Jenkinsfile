@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                // Uses Jenkins' built-in Git step
+                // Checkout the repo using Jenkins git plugin:
                 git url: 'https://github.com/Kunal061/apache.git', branch: 'main'
             }
         }
@@ -21,9 +21,9 @@ pipeline {
                       echo "Error: Apache web root does not exist: ${APACHE_WEB_ROOT}"
                       exit 1
                     fi
-                    
-                    sudo cp -v index.html ${APACHE_WEB_ROOT}/
-                    sudo cp -v styles.css ${APACHE_WEB_ROOT}/
+
+                    sudo cp -v ${WORKSPACE}/index.html ${APACHE_WEB_ROOT}/
+                    sudo cp -v ${WORKSPACE}/styles.css ${APACHE_WEB_ROOT}/
                     sudo systemctl restart httpd
                     '''
                 }
