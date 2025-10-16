@@ -19,9 +19,9 @@ pipeline {
                 script {
                     // Deploy only index.html and styles.css
                     sh """
-                    sudo cp index.html ${APACHE_WEB_ROOT}/
-                    sudo cp styles.css ${APACHE_WEB_ROOT}/
-                    sudo systemctl restart apache2
+                    cp -r index.html ${APACHE_WEB_ROOT}/
+                    cp -r styles.css ${APACHE_WEB_ROOT}/
+                    systemctl restart apache2
                     """
                 }
             }
