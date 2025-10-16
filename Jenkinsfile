@@ -1,5 +1,5 @@
 pipeline {
-    agent {label "new"}
+    agent any
 
     environment {
         APACHE_WEB_ROOT = '/var/www/html'
@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                // Checkout the repo using Jenkins git plugin:
+                // Uses Jenkins' built-in Git step
                 git url: 'https://github.com/Kunal061/apache.git', branch: 'main'
             }
         }
@@ -16,17 +16,15 @@ pipeline {
         stage('Deploy to Apache') {
             steps {
                 script {
-                    // Copy files from current workspace to Apache root
-                    // Use sudo if permissions required; otherwise remove sudo
                     sh '''
                     if [ ! -d "${APACHE_WEB_ROOT}" ]; then
                       echo "Error: Apache web root does not exist: ${APACHE_WEB_ROOT}"
                       exit 1
                     fi
 
-                    sudo cp -v ${WORKSPACE}/index.html ${APACHE_WEB_ROOT}/
-                    sudo cp -v ${WORKSPACE}/styles.css ${APACHE_WEB_ROOT}/
-                    sudo systemctl restart apache2
+                    sudo cp -v index.html ${APACHE_WEB_ROOT}/
+                    sudo cp -v styles.css ${APACHE_WEB_ROOT}/
+                    sudo systemctl restart httpd
                     '''
                 }
             }
@@ -35,7 +33,7 @@ pipeline {
 
     post {
         success {
-            echo 'Website successfully deployed!'
+            echo 'Website successfully deployed on Amazon Linux!'
         }
         failure {
             echo 'Deployment failed! Check above logs.'
