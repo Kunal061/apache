@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+    agent {label "new"}
 
     environment {
         APACHE_WEB_ROOT = '/var/www/html'
