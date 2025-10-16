@@ -15,7 +15,7 @@ pipeline {
         stage('Deploy to Apache') {
             steps {
                 script {
-                    sh '''
+                    sh '
                     if [ ! -d "${APACHE_WEB_ROOT}" ]; then
                       echo "Error: Apache web root does not exist: ${APACHE_WEB_ROOT}"
                       exit 1
@@ -24,7 +24,7 @@ pipeline {
                     sudo cp -v ${WORKSPACE}/index.html ${APACHE_WEB_ROOT}/
                     sudo cp -v ${WORKSPACE}/styles.css ${APACHE_WEB_ROOT}/
                     sudo systemctl restart httpd
-                    '''
+                    '
                 }
             }
         }
