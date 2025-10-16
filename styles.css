@@ -1,43 +1,174 @@
-/* Simple animation for elements appearing on scroll */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+/* Basic Reset & Body Styles */
+:root {
+    --primary-color: #0d0d2b; /* Deep space blue */
+    --secondary-color: #2a2a5e; /* Nebula purple */
+    --accent-color: #00c6ff; /* Bright cyan */
+    --text-color: #e0e0e0; /* Light grey */
+    --font-heading: 'Orbitron', sans-serif;
+    --font-body: 'Roboto', sans-serif;
 }
 
-.fade-in-element {
-    animation: fadeIn 0.8s ease-out forwards;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* Background blob animation */
-@keyframes blob-animation {
-	0% {
-		transform: translate(0px, 0px) scale(1);
-	}
-	33% {
-		transform: translate(30px, -50px) scale(1.1);
-	}
-	66% {
-		transform: translate(-20px, 20px) scale(0.9);
-	}
-	100% {
-		transform: translate(0px, 0px) scale(1);
-	}
+body {
+    font-family: var(--font-body);
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    line-height: 1.6;
 }
 
-.blob {
-    animation: blob-animation 7s infinite;
+/* Header and Navigation */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: rgba(13, 13, 43, 0.8);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid var(--secondary-color);
 }
 
-.animation-delay-2000 {
-    animation-delay: 2s;
+.logo {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #fff;
 }
 
-.animation-delay-4000 {
-    animation-delay: 4s;
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    padding: 0 1rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--accent-color);
+}
+
+/* Main Content & Sections */
+main {
+    padding-top: 70px; /* Offset for fixed navbar */
+}
+
+.hero-section {
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://source.unsplash.com/1600x900/?galaxy,stars') no-repeat center center/cover;
+}
+
+.hero-content h1 {
+    font-family: var(--font-heading);
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    color: #fff;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #fff;
+    transform: translateY(-3px);
+}
+
+.content-section {
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.content-section h2 {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #fff;
+}
+
+.about-section {
+    background-color: var(--secondary-color);
+    max-width: 800px;
+    margin: 2rem auto;
+    border-radius: 10px;
+}
+
+/* Product Cards */
+.product-grid {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.product-card {
+    background-color: var(--secondary-color);
+    border: 1px solid var(--accent-color);
+    border-radius: 10px;
+    padding: 2rem;
+    width: 300px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 198, 255, 0.2);
+}
+
+.product-card img {
+    max-width: 100px;
+    margin-bottom: 1rem;
+}
+
+.product-card h3 {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    color: var(--accent-color);
+    margin-bottom: 0.5rem;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 2rem;
+    margin-top: 2rem;
+    background-color: #0a0a1f;
+    border-top: 1px solid var(--secondary-color);
+}
+
+footer a {
+    color: var(--accent-color);
+    text-decoration: none;
 }
