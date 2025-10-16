@@ -8,7 +8,6 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                // Checkout the repo using Jenkins git plugin:
                 git url: 'https://github.com/Kunal061/apache.git', branch: 'main'
             }
         }
