@@ -1,0 +1,218 @@
+/* Reset & base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #ff6b6b, #f8e71c);
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow-x: hidden;
+}
+
+/* Animations */
+@keyframes textGlow {
+    0%, 100% {
+        text-shadow: 0 0 10px #fff,
+                     0 0 20px #f8e71c,
+                     0 0 30px #ff6b6b,
+                     0 0 40px #ff6b6b;
+        color: #fff;
+    }
+    50% {
+        text-shadow: 0 0 20px #fff,
+                     0 0 40px #f8e71c,
+                     0 0 60px #ff6b6b,
+                     0 0 80px #ff6b6b;
+        color: #ffefd5;
+    }
+}
+
+@keyframes backgroundPulse {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+@keyframes btnHoverAnim {
+    0% {
+        box-shadow: 0 0 5px #fff;
+        transform: scale(1);
+        background: linear-gradient(45deg, #ff6b6b, #f8e71c);
+    }
+    50% {
+        box-shadow: 0 0 20px #f8e71c;
+        transform: scale(1.1);
+        background: linear-gradient(45deg, #f8e71c, #ff6b6b);
+    }
+    100% {
+        box-shadow: 0 0 5px #fff;
+        transform: scale(1);
+        background: linear-gradient(45deg, #ff6b6b, #f8e71c);
+    }
+}
+
+/* Header */
+header {
+    padding: 2rem;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border-radius: 0 0 20px 20px;
+}
+
+h1.animated-text {
+    font-size: 3rem;
+    font-weight: 900;
+    animation: textGlow 3s ease-in-out infinite;
+}
+
+nav ul {
+    list-style: none;
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+nav ul li a.animated-btn {
+    position: relative;
+    padding: 0.6rem 1.5rem;
+    font-weight: 600;
+    text-decoration: none;
+    color: #fff;
+    border: 2px solid #fff;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    background: linear-gradient(45deg, #ff6b6b, #f8e71c);
+    box-shadow: 0 0 5px #fff;
+    overflow: hidden;
+}
+
+nav ul li a.animated-btn::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(255, 255, 255, 0.25);
+    transition: width 0.3s ease;
+    z-index: 1;
+    border-radius: 50px;
+}
+
+nav ul li a.animated-btn:hover::before {
+    width: 100%;
+}
+
+nav ul li a.animated-btn:hover {
+    animation: btnHoverAnim 2s infinite;
+    color: #222;
+    box-shadow: 0 0 15px #f8e71c, 0 0 25px #ff6b6b;
+}
+
+/* Main Hero Section */
+.hero-section {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: linear-gradient(270deg, #ff6b6b, #f8e71c, #ff6b6b);
+    background-size: 600% 600%;
+    animation: backgroundPulse 15s ease infinite;
+    margin: 2rem auto;
+    max-width: 800px;
+    border-radius: 25px;
+    box-shadow: 0 0 40px rgba(255, 107, 107, 0.5);
+}
+
+.hero-section h2, .hero-section p {
+    animation: textGlow 4s ease-in-out infinite;
+    margin-bottom: 1.5rem;
+}
+
+.hero-section p {
+    font-size: 1.25rem;
+    font-weight: 300;
+}
+
+.big-btn {
+    font-size: 1.5rem;
+    padding: 1rem 3rem;
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+    border-radius: 40px;
+    background: linear-gradient(45deg, #f8e71c, #ff6b6b);
+    color: #222;
+    font-weight: 700;
+    text-shadow: 0 0 3px #fff;
+    box-shadow: 0 0 10px #f8e71c, 0 0 20px #ff6b6b;
+    transition: transform 0.3s ease;
+}
+
+.big-btn:hover {
+    animation: btnHoverAnim 2s infinite;
+    color: #fff;
+    text-shadow: 0 0 10px #fff;
+    transform: scale(1.1);
+}
+
+/* Features Section */
+.features-section {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    padding: 2rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+
+.feature-card {
+    flex: 1 1 280px;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 2rem;
+    border-radius: 20px;
+    color: #fff;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease;
+    cursor: default;
+}
+
+.feature-card h3 {
+    margin-bottom: 1rem;
+    font-size: 1.75rem;
+}
+
+.feature-card p {
+    font-weight: 300;
+    line-height: 1.4;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 40px #f8e71c, 0 0 60px #ff6b6b;
+}
+
+.animated-card {
+    animation: textGlow 6s ease-in-out infinite alternate;
+}
+
+/* Footer */
+footer {
+    background: rgba(255, 255, 255, 0.15);
+    text-align: center;
+    padding: 1rem 0;
+    font-weight: 300;
+    border-radius: 20px 20px 0 0;
+    color: #fff;
+}
