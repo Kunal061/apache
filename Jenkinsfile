@@ -2,39 +2,21 @@ pipeline {
     agent any
 
     stages {
-        stage('Checkout') {
+        stage('Clone Repository') {
             steps {
-                git url: 'https://github.com/Kunal061/apache.git', branch: 'main'
+                git 'https://github.com/Kunal061/apache.git'
             }
         }
-
-        stage('Deploy to Apache') {
+        stage('Deploy Files') {
             steps {
-                script {
-                    sh '''
-                    APACHE_WEB_ROOT="/var/www"  # Adjusted path
-                    WORKSPACE_DIR="/var/jenkins_home/workspace/pipe_2_apache"
-
-                    if [ ! -d "$APACHE_WEB_ROOT" ]; then
-                      echo "Error: Apache web root does not exist: $APACHE_WEB_ROOT"
-                      exit 1
-                    fi
-
-                    sudo cp -v "$WORKSPACE_DIR/index.html" "$APACHE_WEB_ROOT/"
-                    sudo cp -v "$WORKSPACE_DIR/styles.css" "$APACHE_WEB_ROOT/"
-                    sudo systemctl restart httpd
-                    '''
-                }
+                sh 'sudo cp index.html /var/www/html/'
+                sh 'sudo cp styles.css /var/www/html/'
             }
         }
-    }
-
-    post {
-        success {
-            echo 'Website successfully deployed on Amazon Linux!'
-        }
-        failure {
-            echo 'Deployment failed! Check above logs.'
+        stage('Restart Apache') {
+            steps {
+                sh 'sudo systemctl restart httpd'
+            }
         }
     }
 }
