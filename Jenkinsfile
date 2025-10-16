@@ -2,27 +2,32 @@ pipeline {
     agent any
 
     environment {
-        REPO_URL = 'https://github.com/Kunal061/apache.git'  // Your GitHub repo URL
         APACHE_WEB_ROOT = '/var/www/html'
     }
 
     stages {
         stage('Checkout') {
             steps {
-                // Using Jenkins git step with credentials
-                git url: "${REPO_URL}", credentialsId: 'github-creds', branch: 'main'
+                // Checkout the repo using Jenkins git plugin:
+                git url: 'https://github.com/Kunal061/apache.git', branch: 'main'
             }
         }
 
         stage('Deploy to Apache') {
             steps {
                 script {
-                    // Deploy only index.html and styles.css
-                    sh """
-                    cp -r index.html ${APACHE_WEB_ROOT}/
-                    cp -r styles.css ${APACHE_WEB_ROOT}/
-                    systemctl restart apache2
-                    """
+                    // Copy files from current workspace to Apache root
+                    // Use sudo if permissions required; otherwise remove sudo
+                    sh '''
+                    if [ ! -d "${APACHE_WEB_ROOT}" ]; then
+                      echo "Error: Apache web root does not exist: ${APACHE_WEB_ROOT}"
+                      exit 1
+                    fi
+
+                    sudo cp -v ${WORKSPACE}/index.html ${APACHE_WEB_ROOT}/
+                    sudo cp -v ${WORKSPACE}/styles.css ${APACHE_WEB_ROOT}/
+                    sudo systemctl restart apache2
+                    '''
                 }
             }
         }
@@ -30,10 +35,10 @@ pipeline {
 
     post {
         success {
-            echo 'Website has been successfully deployed!'
+            echo 'Website successfully deployed!'
         }
         failure {
-            echo 'Deployment failed. Please check logs.'
+            echo 'Deployment failed! Check above logs.'
         }
     }
 }
