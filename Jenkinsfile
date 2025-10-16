@@ -10,10 +10,7 @@ pipeline {
 
         stage('Deploy Files') {
             steps {
-                sh '''
-                   sudo mv -f index.html styles.css /var/www/html/
-                   sudo systemctl restart httpd
-                '''
+                echo "HELLO"
             }
         }
     }
