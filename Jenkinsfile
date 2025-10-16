@@ -21,7 +21,7 @@ pipeline {
                       echo "Error: Apache web root does not exist: ${APACHE_WEB_ROOT}"
                       exit 1
                     fi
-
+                    
                     sudo cp -v index.html ${APACHE_WEB_ROOT}/
                     sudo cp -v styles.css ${APACHE_WEB_ROOT}/
                     sudo systemctl restart httpd
