@@ -4,6 +4,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
+                // Checkout files from your GitHub repository
                 git url: 'https://github.com/Kunal061/apache.git', branch: 'main'
             }
         }
@@ -12,13 +13,16 @@ pipeline {
             steps {
                 script {
                     sh '''
-                    if [ ! -d "/var/www/html" ]; then
-                      echo "Error: Apache web root does not exist: /var/www/html"
+                    APACHE_WEB_ROOT="/var/www/html"
+                    WORKSPACE_DIR="/var/jenkins_home/workspace/pipe_2_apache"
+
+                    if [ ! -d "$APACHE_WEB_ROOT" ]; then
+                      echo "Error: Apache web root does not exist: $APACHE_WEB_ROOT"
                       exit 1
                     fi
 
-                    sudo cp -v /var/jenkins_home/workspace/pipe_2_apache/index.html /var/www/html/
-                    sudo cp -v /var/jenkins_home/workspace/pipe_2_apache/styles.css /var/www/html/
+                    sudo cp -v "$WORKSPACE_DIR/index.html" "$APACHE_WEB_ROOT/"
+                    sudo cp -v "$WORKSPACE_DIR/styles.css" "$APACHE_WEB_ROOT/"
                     sudo systemctl restart httpd
                     '''
                 }
