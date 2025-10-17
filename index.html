@@ -1,72 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stellar Gadgets | Innovation from the Cosmos</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Kunal Rohilla | Tech Portfolio</title>
+    <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-
     <header>
-        <nav class="navbar">
-            <div class="logo">Stellar Gadgets ✨</div>
-            <ul class="nav-links">
-                <li><a href="#hero">Home</a></li>
-                <li><a href="#products">Products</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+        <h1><span class="nerdify">&#60;/&#62;</span> Kunal Rohilla <span class="nerdify">&#60;/&#62;</span></h1>
+        <p>Cloud Intern | AWS Certified | DevOps Enthusiast</p>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#skills">Skills</a>
+            <a href="#contact">Contact</a>
+            <a href="#upload-cv">Upload CV</a>
         </nav>
     </header>
 
-    <main>
-        <section id="hero" class="hero-section">
-            <div class="hero-content">
-                <h1>Welcome to the Future of Technology</h1>
-                <p>Discover gadgets that are light-years ahead of the competition.</p>
-                <a href="#products" class="cta-button">Explore Our Products</a>
-            </div>
-        </section>
+    <section id="about" class="section">
+        <h2>About Me</h2>
+        <p>Detail-oriented engineering student with practical exposure to AWS Cloud through internship experience.</p>
+        <p>Proficient in deployment using Apache2 on EC2, S3 static hosting, IAM configuration, and cloud automation.</p>
+    </section>
 
-        <section id="products" class="content-section">
-            <h2>Our Innovations</h2>
-            <div class="product-grid">
-                <div class="product-card">
-                    
-                    <h3>The Nebula Phone</h3>
-                    <p>A crystal-clear display that mirrors the cosmos. Unparalleled processing power.</p>
-                </div>
-                <div class="product-card">
-                    
-                    <h3>Galaxy Buds Pro</h3>
-                    <p>Listen to the universe with our noise-cancelling, high-fidelity audio headphones.</p>
-                </div>
-                <div class="product-card">
-                    
+    <section id="projects" class="section">
+        <h2>Projects</h2>
+        <ul>
+            <li><strong>Cloud-Based Web Hosting using AWS</strong> - EC2, S3, IAM roles, Apache2 dynamic content, CloudWatch monitoring.</li>
+            <li><strong>Serverless Automation using AWS Lambda</strong> - Backend automation using Lambda, S3 triggers, and CloudWatch alerts.</li>
+        </ul>
+    </section>
 
-[Image of a futuristic smart watch]
+    <section id="skills" class="section">
+        <h2>Skills</h2>
+        <ul>
+            <li>Languages: Python, Bash Scripting, HTML, CSS, Java</li>
+            <li>Tools & Platforms: AWS, Docker, Apache2, Linux CLI, VSCode, Azure</li>
+            <li>Version Control: GitHub, Docker Hub</li>
+        </ul>
+    </section>
 
-                    <h3>Orion Watch</h3>
-                    <p>Track your health, navigate your world, and stay connected from your wrist.</p>
-                </div>
-            </div>
-        </section>
-        
-        <section id="about" class="content-section about-section">
-             <h2>About Stellar Gadgets</h2>
-             <p>Founded in 2025, our mission is to bring futuristic technology to everyone. We believe in sleek design, powerful performance, and user-friendly interfaces that feel like they're from another galaxy.</p>
-        </section>
+    <section id="contact" class="section">
+        <h2>Contact</h2>
+        <p>Email: kunalr.tech@gmail.com</p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/kunal-rohilla-745545246" target="_blank">linkedin.com/in/kunal-rohilla-745545246</a></p>
+        <p>Phone: +91 9212294947</p>
+    </section>
 
-    </main>
+    <section id="upload-cv" class="section">
+        <h2>Upload Your CV</h2>
+        <form id="cvForm">
+            <input type="file" id="cvFile" accept=".pdf,.docx" />
+            <button type="submit">Upload</button>
+        </form>
+        <div id="uploadStatus"></div>
+    </section>
 
-    <footer id="contact">
-        <p>Contact us at <a href="mailto:contact@stellargadgets.io">contact@stellargadgets.io</a></p>
-        <p>&copy; 2025 Stellar Gadgets. All Rights Reserved.</p>
+    <footer>
+        <p>© 2025 Kunal Rohilla Portfolio | Crafted with <span class="heart">&#10084;</span> for Devs</p>
     </footer>
 
+    <script src="app.js"></script>
 </body>
 </html>
