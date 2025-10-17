@@ -1,67 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Kunal Rohilla | Tech Portfolio</title>
-    <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kunal Rohilla | Cloud & DevOps Enthusiast</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> <!-- Using a placeholder, will replace with SVGs -->
 </head>
 <body>
+
     <header>
-        <h1><span class="nerdify">&#60;/&#62;</span> Kunal Rohilla <span class="nerdify">&#60;/&#62;</span></h1>
-        <p>Cloud Intern | AWS Certified | DevOps Enthusiast</p>
-        <nav>
-            <a href="#about">About</a>
-            <a href="#projects">Projects</a>
-            <a href="#skills">Skills</a>
-            <a href="#contact">Contact</a>
-            <a href="#upload-cv">Upload CV</a>
+        <nav class="navbar">
+            <div class="container">
+                <a href="#" class="nav-logo">KR</a>
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+                    <li class="nav-item"><a href="#experience" class="nav-link">Experience</a></li>
+                    <li class="nav-item"><a href="#skills" class="nav-link">Skills</a></li>
+                    <li class="nav-item"><a href="#projects" class="nav-link">Projects</a></li>
+                    <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
         </nav>
     </header>
 
-    <section id="about" class="section">
-        <h2>About Me</h2>
-        <p>Detail-oriented engineering student with practical exposure to AWS Cloud through internship experience.</p>
-        <p>Proficient in deployment using Apache2 on EC2, S3 static hosting, IAM configuration, and cloud automation.</p>
-    </section>
+    <main>
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title">
+                        Hi, I'm <span class="highlight-text" id="name-text"></span><span class="cursor">&nbsp;</span>
+                    </h1>
+                    <p class="hero-subtitle">A Cloud & DevOps Engineer</p>
+                    <p class="hero-description">I build and deploy scalable, efficient cloud solutions. Let's create the future of technology together.</p>
+                    <a href="#projects" class="btn btn-primary">View My Work</a>
+                    <a href="Kunal Rohilla CV .pdf" class="btn btn-secondary" download>Download CV</a>
+                </div>
+            </div>
+        </section>
 
-    <section id="projects" class="section">
-        <h2>Projects</h2>
-        <ul>
-            <li><strong>Cloud-Based Web Hosting using AWS</strong> - EC2, S3, IAM roles, Apache2 dynamic content, CloudWatch monitoring.</li>
-            <li><strong>Serverless Automation using AWS Lambda</strong> - Backend automation using Lambda, S3 triggers, and CloudWatch alerts.</li>
-        </ul>
-    </section>
+        <section id="about" class="about-section content-section">
+            <div class="container">
+                <h2 class="section-title">About Me</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>Detail-oriented engineering student with practical exposure to AWS Cloud through internship experience. Proficient in cloud deployment using Apache2 on EC2, S3 static hosting, and IAM configuration. Completed AWS Cloud Practitioner certification and well-versed in Linux command-line operations. Eager to build a career in Cloud and DevOps domains.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <section id="skills" class="section">
-        <h2>Skills</h2>
-        <ul>
-            <li>Languages: Python, Bash Scripting, HTML, CSS, Java</li>
-            <li>Tools & Platforms: AWS, Docker, Apache2, Linux CLI, VSCode, Azure</li>
-            <li>Version Control: GitHub, Docker Hub</li>
-        </ul>
-    </section>
+        <section id="experience" class="experience-section content-section">
+            <div class="container">
+                <h2 class="section-title">Work Experience</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">Jun 2025 - Jul 2024</div>
+                        <div class="timeline-content">
+                            <h3>Cloud Intern</h3>
+                            <p class="company">VVDN Technologies Pvt Ltd, Gurgaon</p>
+                            <ul>
+                                <li>Implemented AWS-based deployment setups including EC2 instances, S3 static hosting, and IAM role management.</li>
+                                <li>Assisted in configuring Apache2 servers and optimizing cloud environments for efficient application hosting.</li>
+                                <li>Contributed to cloud setup and server management, ensuring efficient deployment of web apps.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <section id="contact" class="section">
-        <h2>Contact</h2>
-        <p>Email: kunalr.tech@gmail.com</p>
-        <p>LinkedIn: <a href="https://www.linkedin.com/in/kunal-rohilla-745545246" target="_blank">linkedin.com/in/kunal-rohilla-745545246</a></p>
-        <p>Phone: +91 9212294947</p>
-    </section>
+        <section id="skills" class="skills-section content-section">
+            <div class="container">
+                <h2 class="section-title">Technical Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3>Languages</h3>
+                        <div class="skills-list">
+                             <span>Python</span> <span>Bash</span> <span>HTML</span> <span>CSS</span> <span>Java</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Tools & Services</h3>
+                         <div class="skills-list">
+                             <span>AWS</span> <span>Docker</span> <span>Apache2</span> <span>Linux CLI</span> <span>VS Code</span> <span>Azure</span>
+                        </div>
+                    </div>
+                     <div class="skill-category">
+                        <h3>Platforms</h3>
+                         <div class="skills-list">
+                            <span>AWS</span> <span>Linux (Ubuntu)</span> <span>Windows</span> <span>GitHub</span> <span>Docker Hub</span> <span>Azure VMs</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <section id="upload-cv" class="section">
-        <h2>Upload Your CV</h2>
-        <form id="cvForm">
-            <input type="file" id="cvFile" accept=".pdf,.docx" />
-            <button type="submit">Upload</button>
-        </form>
-        <div id="uploadStatus"></div>
-    </section>
+        <section id="projects" class="projects-section content-section">
+            <div class="container">
+                 <h2 class="section-title">My Projects</h2>
+                 <div class="projects-grid">
+                     <div class="project-card">
+                         <h3>Cloud-Based Web Hosting using AWS</h3>
+                         <p>Deployed static and dynamic web applications using AWS EC2, S3, and IAM with secure role-based access. Configured Apache2, implemented load balancing, and monitored server performance with CloudWatch.</p>
+                         <a href="#" class="project-link">View Details &rarr;</a>
+                     </div>
+                      <div class="project-card">
+                         <h3>Serverless Automation using AWS Lambda</h3>
+                         <p>Designed and implemented a serverless workflow using AWS Lambda to automate backend processes like file handling and log cleanup, integrated with S3 event triggers and CloudWatch for real-time automation.</p>
+                         <a href="#" class="project-link">View Details &rarr;</a>
+                     </div>
+                 </div>
+            </div>
+        </section>
 
-    <footer>
-        <p>© 2025 Kunal Rohilla Portfolio | Crafted with <span class="heart">&#10084;</span> for Devs</p>
+        <section id="contact" class="contact-section content-section">
+            <div class="container">
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="contact-text">I'm currently open to new opportunities. Feel free to reach out via email or connect with me on LinkedIn.</p>
+                <a href="mailto:Kunalr.tech@gmail.com" class="btn btn-primary">Say Hello</a>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/kunal-rohilla-745545246/" target="_blank">LinkedIn</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Kunal Rohilla. Crafted with passion.</p>
+        </div>
     </footer>
 
-    <script src="app.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
